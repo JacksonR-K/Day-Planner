@@ -35,6 +35,9 @@ $(function () {
       if (i > 12) {
         hour = i - 12 + "PM";
       }
+      else if (i == 12) {
+        hour = i + "PM";
+      }
       else {
         hour = i + "AM";
       }
