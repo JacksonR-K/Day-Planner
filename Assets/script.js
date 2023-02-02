@@ -1,8 +1,15 @@
 
 $(function () {
-  //Set current date at the top of the page
+  //Set current date/time at the top of the page
   var currentDayEl = $('#currentDay');
-  currentDayEl.text(dayjs().format('MMMM DD, YYYY')); 
+  clockSet();
+
+  //Update the displayed time every 1000ms
+  function clockSet(){
+    setInterval(function() {
+      currentDayEl.text(dayjs().format('MMMM DD, YYYY, HH:MM:ss')); 
+    }, 1000);
+  }
 
   //Select the div that will hold the time blocks
   var hourlyEl = $('#event-holder');
